@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index1.css">
+    <style>
+      h1{
+        text-align: center;
+        border-radius: 2px solid black;
+      }
+      #textbox{
+        margin-left:35%;
+        background-color: black;
+        color: white;
+      }
+      #speakbtn{
+        margin-left:40%;
+        background-color: black;
+        color: aliceblue;
+      }
+    </style>
+</head>
+<body>
+    <h1>Text-to-speech</h1>
+    <textarea id="textbox" row="4"cols="50"></textarea><br>
+    <button id="speakbtn"onclick="speak()">speak</button>
+    <script>
+          function speak(){
+            let synth = window.speechSynthesis;
+            let voice = new SpeechSynthesisUtterance(`${textbox.value}`)
+            synth.speak(voice);
+          }
+    </script>
+</body>
+</html>
